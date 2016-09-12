@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Заведения:</h1>
+	<div class="restaurants row">
+		<% @restaurants.each do |item| %>
+			<div class="restaurant-item col-sm-4">
+        <a href="<%= restaurant_path(item) %>">
+          <div class="restaurant-logo">
+            <%= image_tag item.image.url(:medium) %>
+          </div>
+          <h4><%= item.title %></h4>
+        </a> 
+      </div>         
+		<% end %>
+	</div>
+</div>
+
+

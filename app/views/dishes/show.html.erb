@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="rest-thumb">
+		<div class="photo">
+			<div class="in">
+				<%= image_tag @dish.restaurant.image.url(:thumb) %>
+			</div>
+		</div>
+		<h3><%= link_to @dish.restaurant.title, restaurant_path %></h3>
+	</div>
+	<h1><%= @dish.title %></h1>	
+	<div class="dish-show">
+		<div class="dish-photo">			
+			<%= image_tag @dish.image.url(:medium) %>
+		</div>		
+		<p class="dish-descr"><%= @dish.description %></p>
+		<p class="price"><b>Цена, сом:</b> <%= @dish.price %></p>
+	</div>	
+</div>
+
+
+
+
+

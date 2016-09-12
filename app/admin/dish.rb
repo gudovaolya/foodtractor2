@@ -1,6 +1,6 @@
 ActiveAdmin.register Dish do
 
-permit_params :title, :description, :price, :image
+permit_params :title, :description, :price, :image, :restaurant_id
 
 
 form do |f|
@@ -8,6 +8,7 @@ form do |f|
     f.input :title
     f.input :description
     f.input :price
+    f.input :restaurant_id,  :as => :select,      :collection => Restaurant.all
     f.input :image, :as => :file, :hint => image_tag(f.object.image.url(:thumb))
   end
   f.actions
@@ -22,7 +23,10 @@ index do
   column :title do |dish|
     link_to dish.title, admin_dish_path(dish)
   end
-  column :price  
+  column :price 
+  column :restaurant_id do |dish|
+    dish.restaurant.title
+  end
   actions
 end
 
@@ -34,6 +38,9 @@ show do
    row :title   
    row :price
    row :description
+   row :restaurant_id do |dish|
+     dish.restaurant.title
+   end
  end
  active_admin_comments
 end

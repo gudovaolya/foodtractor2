@@ -1,0 +1,26 @@
+<div class="container">
+	<h1><%= @restaurant.title %></h1>
+	<div class="restaurant-info">
+		<div class="restaurant-photo">
+			<%= image_tag @restaurant.image.url(:medium) %>
+		</div>
+		<p class="restaurant-descr"><%= @restaurant.description %></p>
+	</div>
+	<h2>Меню:</h2>
+	<div class="dishes">
+		<% @dishes.each do |item| %>
+			<div class="dish">
+				<div class="dish-photo">
+					<%= image_tag item.image.url(:medium) %>
+				</div>
+				<div class="dish-info">				
+					<h4><%= item.title %></h4>
+					<p><%= item.description %></p>
+				</div>	
+				<p class="price"><b>Цена, сом:</b> <%= item.price %></p>
+				<p class="detail"><%= link_to "Подробнее", dish_path(item) %></p>				
+			</div>
+		<% end %>	
+	</div>
+</div>
+

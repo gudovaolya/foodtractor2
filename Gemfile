@@ -49,3 +49,4 @@ gem 'devise'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem "paperclip", "~> 5.0.0"
+gem 'bootstrap-sass', '~> 3.3.6'
